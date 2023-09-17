@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!--La API para la letra de los rectangulos-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My page</title>
+    <style>
+
+        body {
+            margin: 0;
+            overflow: auto;
+
+            max-width: 100%;
+            max-height: 100%;
+            background: linear-gradient(rgb(101, 95, 95), rgb(87, 87, 87), rgb(42, 40, 40));
+        }
+        pre {
+            font-size: 96%;
+        }
+        .barra_paginas {
+            background-color: gray;
+            height: 80px;
+            position: relative;
+            top: 100%;
+        }
+
+        .img1 {
+            display: inline-block;
+            width: auto;
+            height: 80px;
+            border-radius: 100%;
+            margin: 0 10px;
+            border-radius: 100%;
+            cursor: pointer;
+            border: none;
+            position: relative;
+        }
+        .img1::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #contenedor_img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #Quien_soy {
+            transition: transform 0.3s ease;
+            transition-delay: 4s;
+
+            background-color: rgb(61, 61, 197);
+            border: 5px solid transparent;
+            padding: auto;
+            position: relative;
+            width: 45%;
+            box-shadow: 0px 17px 10px 10px black;
+            left: 5%;
+            height: 236px;
+            animation: entrada 4s;
+            margin-top: 5%;
+        }
+        #Quien_soy:hover {
+            width: 50%;
+            height: 50%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(50%, 50%) scale(1.5);
+            z-index: 999;
+            animation: centerAnimation 0.3 ease forwards;
+            
+        }
+        #Quien_soy.is-centered {
+            width: 45%;
+            height: 236px;
+            position: static;
+            transform: none;
+            animation: none;
+            z-index: auto;
+        }
+        #Quien_soy.is-centered ~ body {
+            overflow: hidden;
+        }
+        @keyframes centerAnimation {
+        0%{
+            transform: translate(-50%, -50%) scale(1);
+        }    
+        100%{
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+        }
+        #nombre {
+            font-size: 60px;
+            text-align: center;
+            letter-spacing: 4px;
+            color: blueviolet;
+        }
+        #nombre:hover {
+            cursor: default;
+        }
+        #texto1 {
+            color: white;
+            line-height: 2;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+        }
+        #proyectos {
+            transition: transform 0.3s ease;
+            transition-delay: 4s;
+
+            background-color: rgb(61, 61, 197);
+            border: 5px solid transparent;
+            padding: auto;
+            position: relative;
+            width: 45%;
+            margin: 5%;
+            height: 270px;
+            box-shadow: 0px 17px 10px 10px black;
+            top: 26px;
+            left: 0%;
+            margin-top: 5%;
+        }
+        #proyectos:hover {
+            width: 50%;
+            height: 50%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(50%, 50%) scale(1.5);
+            z-index: 999;
+            overflow: hidden;
+            animation: centerAnimation 0.3 ease forwards;
+            background: linear-gradient();
+        }
+        #proyectos.is-centered {
+            width: 45%;
+            height: 236px;
+            position: static;
+            transform: none;
+            animation: none;
+            z-index: auto;
+        }
+        #proyectos.is-centered ~ body {
+            overflow: hidden;
+        }
+        #texto2 {
+            color: white;
+            line-height: 2;
+            font-family: 'Open Sans', sans-serif;
+        }
+        #Cs {
+            background-color: rgb(61, 61, 197);
+            border: 5px solid transparent;
+            padding: auto;
+            position: relative;
+            width: 45%;
+            box-shadow: 0px 17px 10px 10px black;
+            left: 5%;
+            top: 25px;
+            height: 236px;
+            margin-top: 7%;
+        }
+        #Cs:hover {
+            width: 50%;
+            height: 50%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(50%, 50%) scale(1.5);
+            z-index: 999;
+            animation: centerAnimation 0.3 ease forwards;
+        }
+        #Cs.is-centered {
+            width: 45%;
+            height: 236px;
+            position: static;
+            transform: none;
+            animation: none;
+            z-index: auto;
+        }
+        #Cs.is-centered ~ body {
+            overflow: hidden;
+        }
+        #texto3 {
+            color: white;
+            line-height: 2;
+            font-family: 'Open Sans', Helvetica, sans-serif;
+        }
+        #contenido {
+            margin-top: 0%;
+
+        }
+        .titulo {
+            margin: 50px auto;
+            width: max-content;
+            font-family: monospace;
+            font-size: 2rem;
+            animation: typing 4.1s steps(9);
+        }
+        @keyframes typing {
+            from {
+                clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            }
+            to {
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+         }
+         .ocultar {
+            display: block;
+
+            transition: opacity 0.3s ease-in-out;
+
+            opacity: 1;
+         }
+         .github {
+            display: inline-block;
+            width: auto;
+            height: 80px;
+            border-radius: 100%;
+            margin: 0 10px;
+            border-radius: 100%;
+            cursor: pointer;
+            border: none;
+            position: relative;
+         }
+        </style>
+        </head>
+        <div class="barra_paginas">
+            <div id="contenedor_img">
+                <a href="https://github.com/Aritznake">
+                <img class="github" src="https://seeklogo.com/images/G/github-logo-2E3852456C-seeklogo.com.png">
+                </a>
+                <a href="http://aritznake.x10.mx">
+                        <img class="img1" src="https://tse2.mm.bing.net/th?id=OIP.THidvbfMcuUdktBHdML61AHaHa&pid=Api&P=0.ico">
+                   </a>
+                    
+                   <a href="http://aritznake.x10.mx/calculadora">
+                    <img class="img1" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEABsbGxscGx4hIR4qLSgtKj04MzM4PV1CR0JHQl2NWGdYWGdYjX2Xe3N7l33gsJycsOD/2c7Z//////////////8BGxsbGxwbHiEhHiotKC0qPTgzMzg9XUJHQkdCXY1YZ1hYZ1iNfZd7c3uXfeCwnJyw4P/Zztn
+                                           ////////////////CABEIAP8A9AMBIgACEQEDEQH/xAAaAAEAAgMBAAAAAAAAAAAAAAAAAwYBBAUC/9oACAEBAAAAALKAAAAADxHgAAZ9SgCCPIAACf2BrYAAAGNj2EUQI9YAe9oDaDWwGnVPIAdexAmkGn6DgcjbAEMF4BJMY1chXuZtACPUvIPc5jVyFe5m0AI9S8g9zmNXIV7mbQAj1
+                                           LyD3OY1chXuTs5AIYbyD3OY1chXuOABeQe5zGrkK9yrL6rUdlmrcHdn42neQe5zGrkK9FY3A1bS4vN7zT4d5B7nMauQr3Ls/qsR2aeswd6bjaV5B7nMauQr3HAGMryD3OY1chXuTY813xYZq9D2tjj6l5B7nMauQr0FlcDUtTjcvvtPh3kHucxq5Cvcy0+qvDaZ6xrd+fjaF5B7nMauQr3
+                                           HAGcLyD3OY1chXuP19keeNF1peTFeQe5zGrkK9q2gHM4/daHGvIPc41MhXufbchxOTYfXI515B7nGqDl1qacedRJ7g3bYCWUQeAc7VAHrqyBjayMawAAAJJgedcAAAxLMAQ+PIAAz6l9gAAAAAAAAAAAAAAAAAAAAH//EABkBAQADAQEAAAAAAAAAAAAAAAACAwQFAf/aAAoCAhADEAAAA
+                                           AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAj7yej0sV1QAAABj0aqJeAAAAR95XQ6OO6oAAAAx6dVEogAAAR95m/oY7awAAAPPcOrZmnEAAAAAAAAAAAAAAAAAAAAAAP//EADcQAAEDAAcFBgYCAQUAAAAAAAEAAgMEESAyUXGRBRIVMUEQEzNTcnMhMFJUYYEUQLEiQlBwof/aAAgBAQA
+                                           BPwD/AIRz2t+BPxwRlPRupXeSYt0W/JiNFvyYjRb8mI0W/JiNFvyYjRb8mI0W/JiNFvyYjRb8mI0W/JiNFvyYjRb8mI0W/JiNFvyYjRb8mI0Qkfg06hCVvUEIEHl8kkAVlOkJu/AY9SgAP6graa2mr/BTHh3w5HD5D3b/AKRy/P8AX/dRHIpj94fkc7UrvgG4/wCLck0MPiytZmuI0Hzxo
+                                           VxGg+eNCuI0HzxoVxGg+eNCuI0HzxoVxGg+eNCuI0HzxoVxGg+eNCuI0HzxoVxGg+eNCmU2iPNTZ2f4th26Q7XK041vcf1pap1K/iQ7zb7jUxPe57i97iXHmT8zZlNcx7YHmtjrtuI1sAw+Flt0WtteLB7aY3ecAg1o5AKoYBVDAKoYBVDAKoYBVDAKoYBVDAKoYBSsAG8ECQ5pHMOFuLm
+                                           8ZGw667Iochla2z48PtKG/wDr5ctwrqMxbivu9IsOuuyKHIZWts+PD7Shv/r5ctwrqMxbivu9IsOuuyKHIZWts+PD7Shv/r5ctwrqMxbivu9IsOuuyKHIZWts+PD7SY7dcChKzFd7H9S72P6l3sf1LvY/qXex/Uu9j+pd7H9S72P6l3sf1KWQOFQ5LqMxbivu9IsOuuyKHIZWts+PD7Xy6
+                                           x2dRmLcV93pFh112RQ5DK1tnx4faUUb5pGRsvOKg2dRoRcD3YuU1Aosw8MMOLVPC+CV0b+YTWue5rWitziAAqPs2jwtG+0SPxKloNFlFRhaPy0VFUqjvo0pjdmDiE1pc4NaKyTUFBRIoRyDn9XFOjY8VOYCFS6N3DgW3CuozFuK+70iw667Iochla2z48PtLZNX8o+2e3bHjxe2tnVfzYs
+                                           ndu2aqqPj/qVCq/lR/vtp9X8Y+oLqMxbivu9IsOuuyKHIZWts+PD7ShlfDKyRnNpUFOo04BEgafpcpaZRYAS6UE/S01lUid9ImfK/mUx7mPa9pqc01hUenwTtFbwx/VpUlKo0QJfM3IGsql0l1KmLyKhyaMAmuLHNc3mDWFBSY5gKiA7q1Oc1grc4AYlUykiYhrLjV1GYtxX3ekWHXXZFD
+                                           kMrW2fHh9r5ddfXs6jMW4r7vSLDrrsihyGVrbPjw+0mMdI9rGCtzjUFBsyjRgb47xyl2bRZB8GbhxapoXwSOjfzCAJIAFZJqAVH2XCxoMw33qTZ1EePCDDi1Umjvo0pjdmDiEASQAKyTUFBQoowC8B706CF4qdG3RUqjdw4EXCuozFuK+70iw667Iochla2z48PtLZQBpeTHdu2AO+hxLF
+                                           s8A02Gvt2yBVR83Kh1GkxdtOANGdmF1GYtxX3ekWHXXZFDkMrW2fHh9pQyuglZI3m0qClQUhoLHiv6TzClpEEArkkA/HMlUqkOpMzpDkBgEx7o3te01OaQQqNTYKQ0VODX9WFSTQwiuSVrQqbSjSpt4CpgFTQmuLHNc3mDWFBOydtbT8erUfgKz8BiVTaS2WpjLo5nErqMxbivu9IsOuuy
+                                           KHIZWts+PD7Xyy5zubicz2dRmLcV93pFh112RQ5DK1tnx4fa7INkve0OmeWfgLg9H82VcHo/myrg9H82VcHo/myp+x4v9kzwVPBJR5CyQLAAVkqHZ7AAZSScAn0CjuHwBbkVPC+B+67MFdRmLcV93pFh112RQ5DK1tnx4faWzWB9MZXyaC63tZgdRg/qx6oLQ6kt/AJ7doNBgacHrqMxbi
+                                           vu9IsH4ghNujK1tnx4fbVFn/jzsk6DnkU1zXtD2kFp5EWtrUlhAgYeRreoZe5lY/BNc17Q5prB7KfO15EbTWGmsldRmLcV5+QskVOcMDa2rRjNC2RgrdH2RUieDwpHNXEqb5x0C4lTfOOgXEqb5x0C4lTfOOgT6fTHiozu7WSyRGtjy1PpM7xU6U1dlAozqRSG/QwgutxXScTZlFRDv0bc
+                                           +zKNMS4VsccFwVv3DtFwVv3DtFwVv3DtFwVv3DtFwVv3DtFwVv3DtFwVv3DtFwVv3DtFwVv3DtFwVv3DtEzY0IvzPco4o4WBkbQ1otGs1Acz8AgAAAOQskAggogtO6f0cR/Yjabx5nkMBbc0OFRRBb8Ha9D/VJqTIySC4ZD5JAKMX0mr8FFrxzZov0dCq89CqxgdCqxgdCqxgdCqxgdCqx
+                                           gdCqxgdCqxgdCqxgdCqxgdCqxgdCqxgdCqxgdCqxgdCq89ChWeTXaIRvODf8A0psbW54n/oL/xAAfEQEBAAEEAwEBAAAAAAAAAAABAgADBBEwEiFRYDH/2gAIAQIBAT8A/UU+M0/DG7quWnnNvbemL3u0leSkMiSJJO6nxmn4ZWpdVy05oW3p8ve7QX1XBkQRJJ3VXjNV8MdfVa583NG3U
+                                           gX+9yCI47SufVHGRBEkn4b/xAAeEQEBAAIBBQEAAAAAAAAAAAABAgARMAMEEiFRYP/aAAgBAwEBPwD9RJug+uEyGgzrSTaHOdw69mVTSrzSbQ+uESGgM6sk3o5zuHXucqmlXmk8qD64dKA14mdSfC05h0jh3Br3LvKpqlfw3//Z">
+                </a>
+            </div>
+         </div>
+<div id="contenido">
+  <article class="titulo" ><h1 id="nombre">ARITZNAKE</h1></article>
+  <center style="margin-top: -3%;">
+  <a href="mailto:aritznake@gmail.com" style="font-size: 35px;">
+    aritznake@gmail.com
+  </a>
+  </center>
+    <div id="overflow1" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+       <div id="Quien_soy" class="ocultar" onmouseover="ocultarOtrosDivs(this)">
+           <h1 style="margin: 20px; color: white;">Quien soy yo?</h1>
+           <pre id="texto1">
+     Soy un desarrollador web que sabe un poco de python, html, Css y Js.
+
+     He creado una página llamada Ganar a Minecraft y una calculadora 
+     sexagesimal, esta última junto con mi padre el cual me enseñó todo
+     lo que sé sobre desarrollo web.
+           </pre>
+         </div>
+
+         <div id="proyectos" class="ocultar" onmouseover="ocultarOtrosDivs(this)">
+            <h1 style="margin: 20px; color: white; display: inline;">Ganar a Minecraft</h1> <a href="http://aritznake.x10.mx"><img style="margin-top: 1px; width: auto; height: 50px; border-radius: 100%; justify-content: center;" src="https://tse2.mm.bing.net/th?id=OIP.THidvbfMcuUdktBHdML61AHaHa&pid=Api&P=0.ico"></a>
+            <pre id="texto2">
+     Ganar a Minecraft fue mi primer proyecto publicado a internet el cual su
+     URL es: aritznake.x10.mx y esta página está inspirada en minecraft, el
+     popular juego de cubos, mi página te podra ayudar jugando minecraft.
+
+     La página te dice cual es la mejor capa para cada mineral, que alimento
+     es necesario para domesticar a un animal específico.
+            </pre>
+          </div>
+
+          <div id="Cs" class="ocultar" onmouseover="ocultarOtrosDivs(this)">
+          <h1 style="margin: 20px; color: white; display: inline;">Calculadora sexagesimal</h1> <a href="http://aritznake.x10.mx/calculadora"><img style="margin-top: 1px; width: auto; height: 50px; border-radius: 100%;"  src="data:image/jpeg;base64,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"></a>
+            <pre id="texto3">
+     La calculadora sexagesimal fue mi segunda página subida a internet, su
+     URL es: aritznake.x10.mx/calculadora fue creada para sumar y restar
+     cantidades que van de 60 en 60 como una hora por ejemplo.
+
+     Puedes poner cifras en las casillas y pulsas al botón "calcular".
+
+            </pre>
+          </div>
+        </div>
+</div>
+    <footer style="margin-top: 80px;">
+        
+         
+    </footer>
+    <script>
+        function ocultarOtrosDivs(triggeringDiv) {
+            var divsOcultable = 
+            document.querySelectorAll('.div-ocultable');
+            divsOcultable.forEach(function(div) {
+                if (div !== triggeringDiv) {
+                    div.style.display = 0;
+                }
+            });
+        } 
+    </script>
+</body>
+</html>
